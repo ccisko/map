@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+* {box-sizing:border-box;}
+body {background-color: #CCC;}
+
+ .mse{ cursor: crosshair } 
+
+#map-canvas{
+    height: 400px;
+	width: 500px;
+	background-color:#FFF;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>x</title>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+</head>
+<body>
+
+ <input type="text" data-bind="textInput: searchPlaces" placeholder="search..." />
+ <div data-bind="style: { mouseover: 'red' },text: searchPlaces">
+ </div>
+ <div>
+ <ul data-bind="foreach: searchedLocations">
+<li data-bind="text: name , click: $parent.selcurrentPlace" class="mse"> </li></ul>
+</div>
+   
+
+<div id="map-canvas">
+</div>
+
+
+
+<script src="js2/lib/knockout-3.2.0.js"></script>
+<script src="js2/model.js"></script>
+<script src="js2/script.js"></script>
+
+</body>
+</html>
+
+
