@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<style>
-* {box-sizing:border-box;}
-body {background-color: #CCC;}
-
- .mse{ cursor: crosshair } 
-
-#map-canvas{
-    height: 400px;
-	width: 500px;
-	background-color:#FFF;
-}
-</style>
+  <head>
+    <style>
+      * {box-sizing:border-box;}
+      body {background-color: #CCC;}
+      .mse{ cursor: crosshair } 
+      #map-canvas{
+        height: 400px;
+        width: 500px;
+        background-color:#FFF;
+      }
+    </style>
     <meta charset="UTF-8">
-    <title>x</title>
+    <title>Project 5 </title>
+    <!-- connect to google api -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-
-</head>
-<body>
-
- <input type="text" data-bind="textInput: searchPlaces" placeholder="search..." />
- <div data-bind="style: { mouseover: 'red' },text: searchPlaces">
- </div>
- <div>
- <ul data-bind="foreach: searchedLocations">
-<li data-bind="text: name , click: $parent.selcurrentPlace" class="mse"> </li></ul>
-</div>
-   
-
-<div id="map-canvas">
-</div>
-
-
-
-<script src="js2/lib/knockout-3.2.0.js"></script>
-<script src="js2/model.js"></script>
-<script src="js2/script.js"></script>
-
-</body>
+  </head>
+  <body>
+    <!-- search box  -->
+    <input type="text" data-bind="textInput: searchPlaces" placeholder="search..." />
+    <!-- list of locations filtered by searchbox  -->
+    <div>
+      <ul data-bind="foreach: searchedLocations">
+        <li data-bind="text: name , click: $parent.showpopup" class="mse"> </li>
+      </ul>
+    </div>
+    <!-- display map see line 1 script.js  -->
+    <div id="map-canvas">
+    </div>
+    <div class="nutrition-container">
+      <h3 id="nutrition-header"> Fun Facts:</h3>
+      <p> USDA suggests that 
+      <span ></span> has <span id="nutrition-calories"></span> &nbsp;Calories</p>
+    </div>
+    <!-- linked files to  run app  -->
+    <script src="js2/lib/jquery.min.js"></script>
+    <script src="js2/lib/knockout-3.2.0.js"></script>
+    <script src="js2/model.js"></script>
+    <script src="js2/script.js"></script>
+  </body>
 </html>
-
-
