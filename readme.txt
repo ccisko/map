@@ -8,5 +8,3 @@ I looked at other peoples examples and it seems that they have a lot of function
 and passing alot of variables ... I dont feel that I am comfortable with passing 
 variables all over the place .and the syntax is really confusing to me .
 
-the mixed2 folder is the most recent 
-mapstuff folder show animated markers
