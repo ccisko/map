@@ -1,10 +1,15 @@
 readme file .
 
-I feel like I have a good grasp on knockout JS and googlemaps
-the problem that i am having is putting them together . 
-I still dont feel that i sm an expert by any means in either of them and 
-just need to see if there is something simple i am missing . 
-I looked at other peoples examples and it seems that they have a lot of functions 
-and passing alot of variables ... I dont feel that I am comfortable with passing 
-variables all over the place .and the syntax is really confusing to me .
+this is project (5) Neighborhood map
+open index.html 
+A list of places to Eat in Wallingford Ct will appear.
+use the search box to narrow the amout of choices.
+You ca type in the Nam of the Business or type in some of the menu 
+items that are available to you. 
+for example if you type in Mr or cupcakes it will display Mr D's 
+
+from the list  you can click o a marker or on the business name and 
+an information widow will open giving you the street address and some menu choices.
+It will also give a random menu Item with the USDA calories for that item .
+
 
