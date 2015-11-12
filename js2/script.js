@@ -1,15 +1,17 @@
 //Default Map settings
-var map = new google.maps.Map(document.getElementById('map-canvas'),{zoom: 15,center: new google.maps.LatLng(41.4562186,-72.8224525) });
+var aftergoogle = function() {
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+    {zoom: 15,center: new google.maps.LatLng(41.4562186,-72.8224525) });
 // creating locations
-var makingPlaces = function(placeData) {
-  this.name = ko.observable(placeData.name);
-  this.description = ko.observable(placeData.description);
-  this.address = ko.observable(placeData.address);
-  this.lat = ko.observable(placeData.lat);
-  this.lng = ko.observable(placeData.lng);
-  this.myfunamount = ko.observableArray();
-  this.myfunitem = ko.observableArray();
-  this.marker = new google.maps.Marker({
+  var makingPlaces = function(placeData) {
+    this.name = ko.observable(placeData.name);
+    this.description = ko.observable(placeData.description);
+    this.address = ko.observable(placeData.address);
+    this.lat = ko.observable(placeData.lat);
+    this.lng = ko.observable(placeData.lng);
+    this.myfunamount = ko.observableArray();
+    this.myfunitem = ko.observableArray();
+    this.marker = new google.maps.Marker({
     position: new google.maps.LatLng(placeData.lat,placeData.lng),
     animation: google.maps.Animation.DROP,
     title: this.name(),
@@ -114,3 +116,4 @@ var viewModel = function() {
   };
 };
 ko.applyBindings(new viewModel());
+}

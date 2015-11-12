@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
     <style>
-      * {box-sizing:border-box;}
-      .mse{ cursor: pointer } 
+	device-width:
+
+@viewport {
+   width: device-width;
+}
+      *{box-sizing:border-box;
+      }
+      .mse{ cursor: pointer;
+      } 
 	  input {
+        margin-top: 44px;
+        color: #666;
+        margin-left: 0px;
+      }
+      #map-canvas{
+        height: 300px;
+        width: 320px;
+      }
+	  @media screen and (min-width: 480px) {
+      #map-canvas{
+		height: 400px;
+        width: 480px;
+
+      }
+	  	input {
         margin-top: 44px;
         color: #666;
         margin-left: 250px;
       }
-      #map-canvas{
-        height: 400px;
-        width: 800px;
-      }
+}
       h2 {
         font-size:16px;
       }
@@ -29,11 +49,14 @@
         font-size:12px;
       }
     </style>
-    <meta charset="UTF-8">
-    <title>Project 5 
+        <title>Project 5 
     </title>
     <!-- connect to google api -->
-    <script src="https://maps.googleapis.com/maps/api/js" ></script>
+    <script>function googleSuccess() {
+		aftergoogle();
+		
+		}</script>
+      <script async src="https://maps.googleapis.com/maps/api/js?callback=googleSuccess"></script>
   </head>
   <body>
   <div class="container">
