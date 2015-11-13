@@ -1,4 +1,3 @@
-
 //Default Map settings
 var aftergoogle = function() {
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -61,16 +60,16 @@ var aftergoogle = function() {
         });
         // infowindows and second API
         self.showpopup = function(placeItem) {
-                getcontentforinfowin(placeItem);
-                infowinmarker.open(map, placeItem.marker);
-                placeItem.marker.setAnimation(google.maps.Animation.BOUNCE);
-                //Bounce markers with a time out of 800
-                setTimeout(
-                    function() {
-                        placeItem.marker.setAnimation(null);
-                    }, 800);
-            };
-            // set info windowcontent
+            getcontentforinfowin(placeItem);
+            infowinmarker.open(map, placeItem.marker);
+            placeItem.marker.setAnimation(google.maps.Animation.BOUNCE);
+            //Bounce markers with a time out of 800
+            setTimeout(
+                function() {
+                    placeItem.marker.setAnimation(null);
+                }, 800);
+        };
+        // set info windowcontent
         getcontentforinfowin = function(placeItem) {
             var nutrition_item = placeItem.description();
             mycontent = nutrition_item;
@@ -88,9 +87,9 @@ var aftergoogle = function() {
                 success: function(response) {
                     while (true) {
                         i = Math.floor((Math.random() * 9) + 1);
-                            var myfunamounttest = response.hits[i].fields.nf_calories;
-                            var myfunitemtest = response.hits[i].fields.item_name;
-							mycontentsuccess = "<h2>" + placeItem.name() + "</h2> " + "<h5>" + "Menu Items:" + placeItem.description() + "</h5>" + "<h4>" + placeItem.address() + "</h4> " + "<h5>" + "Calorie Facts:" + "<br>" + myfunitemtest + "<br>" + myfunamounttest + " calories" + "</h5>";
+                        var myfunamounttest = response.hits[i].fields.nf_calories;
+                        var myfunitemtest = response.hits[i].fields.item_name;
+                        mycontentsuccess = "<h2>" + placeItem.name() + "</h2> " + "<h5>" + "Menu Items:" + placeItem.description() + "</h5>" + "<h4>" + placeItem.address() + "</h4> " + "<h5>" + "Calorie Facts:" + "<br>" + myfunitemtest + "<br>" + myfunamounttest + " calories" + "</h5>";
                         infowinmarker.setContent(mycontentsuccess);
                         break;
                     }
