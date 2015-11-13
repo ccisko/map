@@ -1,3 +1,4 @@
+
 //Default Map settings
 var aftergoogle = function() {
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -41,9 +42,9 @@ var aftergoogle = function() {
         self.searchedLocations = ko.computed(function() {
             var myplacesarray = [];
             for (var i = 0; i < myPlaces.length; i++) {
-                y = self.searchPlaces();
-                x = self.locations()[i].name().toLowerCase().indexOf(y.toLowerCase());
-                Z = self.locations()[i].description().toLowerCase().indexOf(y.toLowerCase());
+                var y = self.searchPlaces();
+                var x = self.locations()[i].name().toLowerCase().indexOf(y.toLowerCase());
+                var Z = self.locations()[i].description().toLowerCase().indexOf(y.toLowerCase());
                 if (Z != -1 || x != -1) {
                     myplacesarray.push(self.locations()[i]);
                     self.locations()[i].togglemkr(true);
@@ -68,7 +69,7 @@ var aftergoogle = function() {
                     function() {
                         placeItem.marker.setAnimation(null);
                     }, 800);
-            }
+            };
             // set info windowcontent
         getcontentforinfowin = function(placeItem) {
             var nutrition_item = placeItem.description();
@@ -87,8 +88,8 @@ var aftergoogle = function() {
                 success: function(response) {
                     while (true) {
                         i = Math.floor((Math.random() * 9) + 1);
-                        if (response.hits[i].fields !== undefined) {
-                            if (response.hits[i].fields.brand_name == "USDA") {
+                        if (response.hits[i].fields != undefined) {
+                            if (response.hits[i].fields.brand_name = "USDA") {
                                 var myfunamounttest = response.hits[i].fields.nf_calories;
                                 var myfunitemtest = response.hits[i].fields.item_name;
                             }

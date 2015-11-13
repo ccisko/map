@@ -1,4 +1,4 @@
-"use strict";
+
 //this file just contains an array of places for map
 //put objects in seperate file  making it look nicer.
 var myPlaces =[	
