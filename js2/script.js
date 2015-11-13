@@ -88,13 +88,9 @@ var aftergoogle = function() {
                 success: function(response) {
                     while (true) {
                         i = Math.floor((Math.random() * 9) + 1);
-                        if (response.hits[i].fields != undefined) {
-                            if (response.hits[i].fields.brand_name = "USDA") {
-                                var myfunamounttest = response.hits[i].fields.nf_calories;
-                                var myfunitemtest = response.hits[i].fields.item_name;
-                            }
-                        }
-                        mycontentsuccess = "<h2>" + placeItem.name() + "</h2> " + "<h5>" + "Menu Items:" + placeItem.description() + "</h5>" + "<h4>" + placeItem.address() + "</h4> " + "<h5>" + "USDA Fun Facts:" + "<br>" + myfunitemtest + "<br>" + myfunamounttest + " calories" + "</h5>";
+                            var myfunamounttest = response.hits[i].fields.nf_calories;
+                            var myfunitemtest = response.hits[i].fields.item_name;
+							mycontentsuccess = "<h2>" + placeItem.name() + "</h2> " + "<h5>" + "Menu Items:" + placeItem.description() + "</h5>" + "<h4>" + placeItem.address() + "</h4> " + "<h5>" + "Calorie Facts:" + "<br>" + myfunitemtest + "<br>" + myfunamounttest + " calories" + "</h5>";
                         infowinmarker.setContent(mycontentsuccess);
                         break;
                     }
